@@ -2,7 +2,7 @@ import os.path
 from dataclasses import dataclass
 
 from ledboarddesktopminimal.components.board_communicator.communicator import BoardCommunicator
-from ledboarddesktopminimal.components.board_detector.detector import BoardDetector
+from ledboarddesktopminimal.components.board_detector import BoardDetector
 from ledboarddesktopminimal.python_extensions.singleton_metaclass import SingletonMetaclass
 
 

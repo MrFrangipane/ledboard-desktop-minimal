@@ -66,7 +66,11 @@ class BoardWidget(QWidget):
             QLabel("B"), self.spin_universe_b,
             QLabel("C"), self.spin_universe_c,
         ]))
-        layout.addWidget(make_group("LED per Univ.", [self.spin_led_per_universe]))
+        layout.addWidget(make_group(
+            title="LED count",
+            widgets=[self.spin_led_per_universe],
+            tooltip="LED count per universe"
+        ))
 
         layout.addWidget(QWidget())
         layout.addWidget(make_group("Actions", orientation=Qt.Horizontal, widgets=[
