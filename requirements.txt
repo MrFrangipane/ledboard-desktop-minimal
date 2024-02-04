@@ -1,4 +1,4 @@
 pyserial
 PySide6
-pyside6-helpers @ git@github.com:MrFrangipane/pyside6-helpers.git@main
-python-arduino-serial @ git@github.com:MrFrangipane/python-arduino-serial.git@main
+pyside6-helpers @ https://github.com/MrFrangipane/ledboard-desktop-minimal@main
+python-arduino-serial @ https://github.com/MrFrangipane/python-arduino-serial@main
