@@ -2,6 +2,8 @@
 
 Minimal version of the desktop app for LED Boards
 
+![Main Window](main-window.png)
+
 ## Todo
 
 - [ ] move text highlighter (and logger ?) to pyside6helpers
