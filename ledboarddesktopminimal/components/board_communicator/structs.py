@@ -10,9 +10,9 @@ class BoardSettings:
     firmware_revision: IntegerType() = 1
     hardware_id: BytesType(8) = BytesDefault(8)
     ip_address: BytesType(4) = BytesDefault(4)
-    universe_a: IntegerType() = 0
-    universe_b: IntegerType() = 1
-    universe_c: IntegerType() = 2
+    universe_a: IntegerType() = -1
+    universe_b: IntegerType() = -1
+    universe_c: IntegerType() = -1
     pixel_per_universe: IntegerType() = 150
     do_save_and_reboot: IntegerType() = 0  # 4 bytes int instead of bool to avoid manual bytes padding
     do_reboot_bootloader: IntegerType() = 0

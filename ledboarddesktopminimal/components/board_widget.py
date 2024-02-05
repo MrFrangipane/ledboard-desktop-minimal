@@ -26,15 +26,18 @@ class BoardWidget(QWidget):
         self.lineedit_ip.setFixedWidth(110)
 
         self.spin_universe_a = QSpinBox()
-        self.spin_universe_a.setMinimum(0)
+        self.spin_universe_a.setToolTip("-1 to ignore universes")
+        self.spin_universe_a.setMinimum(-1)
         self.spin_universe_a.setMaximum(256)
 
         self.spin_universe_b = QSpinBox()
-        self.spin_universe_b.setMinimum(0)
+        self.spin_universe_b.setToolTip("-1 to ignore universes")
+        self.spin_universe_b.setMinimum(-1)
         self.spin_universe_b.setMaximum(256)
 
         self.spin_universe_c = QSpinBox()
-        self.spin_universe_c.setMinimum(0)
+        self.spin_universe_c.setToolTip("-1 to ignore universes")
+        self.spin_universe_c.setMinimum(-1)
         self.spin_universe_c.setMaximum(256)
 
         self.spin_led_per_universe = QSpinBox()
