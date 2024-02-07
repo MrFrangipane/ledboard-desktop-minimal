@@ -5,7 +5,7 @@ from PySide6.QtWidgets import QApplication, QDockWidget
 
 # from pyside6helpers.css.editor import CSSEditor
 from pyside6helpers import css
-from pyside6helpers.logger.widget import LoggerWidget
+from pyside6helpers.logger import dock_logger_to_main_window
 
 from ledboarddesktopminimal.components.central_widget import CentralWidget
 from ledboarddesktopminimal.components.main_window import MainWindow
@@ -25,13 +25,7 @@ class Launcher(QObject):
 
         #
         # Logger
-        self._logger_widget = LoggerWidget()
-        logger_dock_widget = QDockWidget()
-        logger_dock_widget.setWindowTitle("Logger")
-        logger_dock_widget.setFeatures(QDockWidget.DockWidgetFeature.NoDockWidgetFeatures)
-        logger_dock_widget.setAllowedAreas(Qt.DockWidgetArea.BottomDockWidgetArea)
-        logger_dock_widget.setWidget(self._logger_widget)
-        self._main_window.addDockWidget(Qt.DockWidgetArea.BottomDockWidgetArea, logger_dock_widget)
+        dock_logger_to_main_window(self._main_window)
 
         #
         # Boards
