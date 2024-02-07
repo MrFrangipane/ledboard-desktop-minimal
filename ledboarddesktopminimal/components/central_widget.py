@@ -5,7 +5,7 @@ from pyside6helpers import icons
 from pyside6helpers.hourglass import Hourglass
 from pyside6helpers.error_reporting import error_reported
 
-from ledboarddesktopminimal.core.configuration import Configuration
+from ledboarddesktopminimal.core.components import Components
 from ledboarddesktopminimal.components.board_widget import BoardWidget
 
 
@@ -41,21 +41,21 @@ class CentralWidget(QWidget):
         main_layout.addWidget(group, 1, 0, 1, 2)
         main_layout.setColumnStretch(0, 100)
 
-        Configuration().board_detector.detectionStarted.connect(self._clear)
-        Configuration().board_detector.boardDetected.connect(self._update_widgets)
-        Configuration().board_detector.detectionFinished.connect(self._complete_detection)
+        Components().board_detector.detectionStarted.connect(self._clear)
+        Components().board_detector.boardDetected.connect(self._update_widgets)
+        Components().board_detector.detectionFinished.connect(self._complete_detection)
 
     @error_reported("Board detection")
     def _detect(self):
         with Hourglass():
-            Configuration().board_detector.detect()
+            Components().board_detector.detect()
 
     def _clear(self):
         layout.clear(self.board_widgets_layout)
         self.board_widgets = dict()
 
     def _update_widgets(self):
-        for board in Configuration().board_detector.boards:
+        for board in Components().board_detector.boards:
             if board.hardware_id not in self.board_widgets:
                 new_board_widget = BoardWidget(board)
                 self.board_widgets[board.hardware_id] = new_board_widget

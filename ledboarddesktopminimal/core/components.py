@@ -7,7 +7,7 @@ from ledboarddesktopminimal.python_extensions.singleton_metaclass import Singlet
 
 
 @dataclass
-class Configuration(metaclass=SingletonMetaclass):
+class Components(metaclass=SingletonMetaclass):
     board_communicator: BoardCommunicator = BoardCommunicator()
     board_detector: BoardDetector = BoardDetector()
     resources_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "resources")

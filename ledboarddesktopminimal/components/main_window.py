@@ -4,7 +4,7 @@ from PySide6.QtCore import Signal
 from PySide6.QtGui import QPixmap, QIcon
 from PySide6.QtWidgets import QMainWindow, QLabel
 
-from ledboarddesktopminimal.core.configuration import Configuration
+from ledboarddesktopminimal.core.components import Components
 
 
 class MainWindow(QMainWindow):
@@ -15,10 +15,10 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("LED Board Configuration")
 
-        icon_filepath = os.path.join(Configuration().resources_path, "led.png")
+        icon_filepath = os.path.join(Components().resources_path, "led.png")
         self.setWindowIcon(QIcon(icon_filepath))
 
-        logo_filepath = os.path.join(Configuration().resources_path, "frangitron-logo.png")
+        logo_filepath = os.path.join(Components().resources_path, "frangitron-logo.png")
         logo_pixmap = QPixmap(logo_filepath)
         logo_label = QLabel()
         logo_label.setPixmap(logo_pixmap)

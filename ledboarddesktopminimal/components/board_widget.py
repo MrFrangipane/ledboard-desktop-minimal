@@ -6,7 +6,7 @@ from pyside6helpers.group import make_group
 from pyside6helpers.error_reporting import error_reported
 
 from ledboarddesktopminimal.core.board import Board
-from ledboarddesktopminimal.core.configuration import Configuration
+from ledboarddesktopminimal.core.components import Components
 from ledboarddesktopminimal.components.board_communicator.structs import BoardSettings
 from ledboarddesktopminimal.components.board_factory import board_factory
 
@@ -105,20 +105,20 @@ class BoardWidget(QWidget):
 
     @error_reported("Refresh Board")
     def refresh(self):
-        Configuration().board_communicator.set_serial_port_name(self._board.port_name)
-        settings = Configuration().board_communicator.get_configuration()
+        Components().board_communicator.set_serial_port_name(self._board.port_name)
+        settings = Components().board_communicator.get_configuration()
         self._board = board_factory(self._board.port_name, settings)
         self.update_widgets()
 
     @error_reported("Apply Settings")
     def apply(self):
-        Configuration().board_communicator.set_serial_port_name(self._board.port_name)
-        Configuration().board_communicator.configure(self._make_settings())
+        Components().board_communicator.set_serial_port_name(self._board.port_name)
+        Components().board_communicator.configure(self._make_settings())
 
     @error_reported("Save and reboot")
     def save_and_reboot(self):
-        Configuration().board_communicator.set_serial_port_name(self._board.port_name)
-        Configuration().board_communicator.configure(self._make_settings(do_save_and_reboot=True))
+        Components().board_communicator.set_serial_port_name(self._board.port_name)
+        Components().board_communicator.configure(self._make_settings(do_save_and_reboot=True))
 
     # FIXME should we construct a Board instead ? (and let the factory convert to BoardSettings)
     def _make_settings(self, do_save_and_reboot=False) -> BoardSettings:

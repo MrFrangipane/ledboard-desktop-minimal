@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 
 NAME = 'ledboarddesktopminimal'
-VERSION = '0.0.0'
+VERSION = '0.0.1'
 DESCRIPTION = 'LED Board Desktop (minimal)'
 AUTHOR = 'Frangitron'
 AUTHOR_EMAIL = 'contact@frangitron.com'

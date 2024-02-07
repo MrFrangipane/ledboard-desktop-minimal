@@ -5,16 +5,16 @@ from PySide6.QtWidgets import QApplication, QDockWidget
 
 # from pyside6helpers.css.editor import CSSEditor
 from pyside6helpers import css
+from pyside6helpers.logger.widget import LoggerWidget
 
 from ledboarddesktopminimal.components.central_widget import CentralWidget
 from ledboarddesktopminimal.components.main_window import MainWindow
-from ledboarddesktopminimal.components.logger.widget import LoggerWidget
 
 
 _logger = logging.getLogger(__name__)
 
 
-class GUILoader(QObject):
+class Launcher(QObject):
     def __init__(self, parent=None):
         super().__init__(parent)
 

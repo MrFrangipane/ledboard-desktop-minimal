@@ -41,4 +41,5 @@ class BoardDetector(QObject):
             else:
                 _logger.info(f"No board")
 
+        _logger.info(f"Finished")
         self.detectionFinished.emit()
