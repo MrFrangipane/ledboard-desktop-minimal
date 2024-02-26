@@ -5,7 +5,7 @@ from pythonarduinoserial.types import *
 
 @dataclass
 class BoardSettings:
-    name: StringType(8) = StringDefault(8)  # includes null terminator (8 for proper alignment)
+    name: StringType(8) = StringDefault(8)  # includes null terminator, length 8 to avoid manual bytes padding
     hardware_revision: IntegerType() = 1
     firmware_revision: IntegerType() = 1
     hardware_id: BytesType(8) = BytesDefault(8)
